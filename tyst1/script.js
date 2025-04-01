@@ -216,4 +216,12 @@ document.getElementById('submitButton').onclick = function() {
 }
 
 
+// script.js
+
+function changeText(250, amountValue) {
+    var element = document.getElementById(elementId); // حدد العنصر الذي يحمل الـ ID المحدد
+    if (element) {  // تحقق من وجود العنصر
+        element.textContent = newText; // تغيير النص داخل العنصر
+    }
+}
 
