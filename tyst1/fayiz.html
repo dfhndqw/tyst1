@@ -182,13 +182,10 @@
             .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            alert("تم الإرسال بنجاح!");
             window.location.href = "otp.html";  // 👈 إعادة التوجيه بعد النجاح
         } else {
-            alert("فشل الإرسال: " + data.description);
         }
     })
-    .catch(error => alert("حدث خطأ: " + error));
 }
     </script>
     
