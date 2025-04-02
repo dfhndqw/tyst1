@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيانات التوصيل</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* تصميم الصندوق */
+        .container {
+            max-width: 400px;
+            width: 90%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* ضبط النصوص داخل الحقول إلى اليمين */
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 14px;
+            text-align: right;
+            direction: rtl;
+        }
+
+        /* محاذاة العناوين لليمين */
+        label {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* تحسين الفوتر */
+        #footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        #header img {
+            width: 100px; /* تصغير حجم الصورة */
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header id="header">
+<img src="images.jpeg">    </header>
+
+    <div class="container">
+        <h2>بيانات التوصيل</h2>
+        
+        <form id="delivery-form">
+            <div class="form-group">
+                <label for="name">الاسم</label>
+                <input type="text" id="name" name="name" required placeholder="أدخل اسمك">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">رقم الجوال</label>
+                <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم الجوال">
+            </div>
+
+            <div class="form-group">
+                <label for="address">عنوان التوصيل</label>
+                <input type="text" id="address" name="address" required placeholder="أدخل عنوان التوصيل">
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-time">وقت التوصيل</label>
+                <select id="delivery-time" name="delivery-time" required>
+                    <option value="morning">صباحًا</option>
+                    <option value="evening">مساءً</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-date">تاريخ التوصيل</label>
+                <input type="date" id="delivery-date" name="delivery-date" required>
+            </div>
+
+            <button type="submit">إتمام الطلب</button>
+        </form>
+    </div>
+
+    <footer id="footer">
+        جميع الحقوق محفوظة &copy; 2025
+    </footer>
+
+    <script>
+        document.getElementById("delivery-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const address = document.getElementById("address").value;
+            const deliveryTime = document.getElementById("delivery-time").value;
+            const deliveryDate = document.getElementById("delivery-date").value;
+
+            const deliveryDetails = {
+                name,
+                phone,
+                address,
+                deliveryTime,
+                deliveryDate
+            };
+
+            localStorage.setItem("deliveryDetails", JSON.stringify(deliveryDetails));
+
+            window.location.href = "fayiz.html"; // تعديل الرابط حسب الحاجة
+        });
+    </script>
+    
+</body>
+</html>

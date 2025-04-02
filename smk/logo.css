@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #002855;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-icon {
+    font-size: 250px;
+    color: white;
+    margin-left: 10px; /* ✅ إضافة قيمة مناسبة لتجنب الخطأ */
+}
+
+.logo img {
+    height: 40px;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+main {
+    padding: 10px;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.service-item {
+    background-color: #004080;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.service-item:hover {
+    background-color: #0055a5;
+}
+
+.service-item img {
+    height: 25px;
+}
+
+@media (max-width: 600px) {
+    .service-item {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .service-item img {
+        height: 20px;
+    }
+    h1 {
+        font-size: 16px;
+    }
+    .menu-icon {
+        font-size: 20px;
+    }
+}
+
+#service-1, #service-2, #service-3, #service-4 { 
+    height: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid white;
+}

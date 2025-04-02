@@ -1,0 +1,113 @@
+/* تعيين الخطوط والألوان العامة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* تعيين الاتجاه من اليمين لليسار */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* تنسيق تفاصيل المنتج */
+#product-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* تفعيل محاذاة العناصر في المنتصف */
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق صورة المنتج */
+#product-detail img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* تنسيق العناوين والفقرة */
+#product-detail h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+#product-detail p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* تنسيق الحقول */
+label {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+}
+
+/* تنسيق الحقول المدخلة مثل الكمية وقائمة التنظيف */
+input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* تنسيق زر "إضافة إلى السلة" */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 16px 24px; /* زيادة الحشوة لجعل الزر أكبر */
+    border: none;
+    border-radius: 8px;
+    font-size: 18px; /* زيادة حجم الخط */
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* إضافة مسافة بين الأزرار */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* تنسيق للأزرار الأخرى أو النصوص */
+button:focus {
+    outline: none;
+}
+
+/* تنسيق مسافات الأزرار */
+input[type="button"], select {
+    margin-bottom: 20px;
+}
+
+#footer {
+    background-color: #333; /* لون الخلفية */
+    color: white; /* لون النص */
+    text-align: center; /* توسيط النص */
+    padding: 10px 0; /* إضافة تباعد داخلي */
+    position: fixed; /* تثبيت الفوتر في الأسفل */
+    bottom: 0;
+    width: 100%;
+}
+
+

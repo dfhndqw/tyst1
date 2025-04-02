@@ -1,0 +1,85 @@
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart {
+    font-size: 20px;
+}
+/* شبكة المنتجات */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* صفين من المربعات */
+    gap: 15px;
+    padding: 20px;
+}
+
+/* تخصيص كل منتج داخل الشبكة */
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* تخصيص الصورة داخل كل منتج */
+.product img {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* الزر داخل كل منتج */
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#hedarhom {
+    width: 150px; /* تصغير الحجم */
+    height: auto;
+    margin-left: auto; /* يدفع الصورة إلى اليمين */
+    display: block;
+}
+
+#texty {
+    color: #000000; /* تغيير اللون (يمكنك اختيار أي لون آخر) */
+    font-size: 24px; /* تحديد حجم الخط */
+    text-align: left; /* محاذاة النص إلى اليسار */
+    margin-left: 10px; /* إضافة مسافة من اليسار */
+}
+
+#footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    position: relative; /* يضمن أن الفوتر لا يغطي المحتوى */
+    bottom: 0;
+}

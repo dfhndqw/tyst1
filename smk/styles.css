@@ -1,0 +1,128 @@
+/* إعداد الخط العام */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* توسيط الحاوية أفقيًا */
+    align-items: center; /* توسيط الحاوية عموديًا */
+    height: 100vh; /* جعل الصفحة ممتدة على كامل الشاشة */
+    text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+/* تنسيق الحاوية الرئيسية */
+.container {
+    width: 300px;
+    max-width: 400px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: right; /* محاذاة محتوى الحاوية إلى اليمين */
+    margin-top: 50px;
+
+}
+
+/* تنسيق الشعار */
+.logo {
+    width: 120px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* تنسيق النموذج */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط العناصر داخل الفورم */
+}
+
+#hedrform{  
+       margin-top: 50px;
+}
+
+@media (min-width: 769px) {
+    #pageHeader {
+        display: none;
+    }
+}
+
+
+
+/* الحاوية الخاصة بكل حقل مع التسمية */
+.form-group {
+    display: flex;
+    align-items: center; /* محاذاة التسمية مع الحقل */
+    justify-content: space-between; /* توزيع المساحة بين التسمية والحقل */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+/* تنسيق التسمية */
+label {
+    font-size: 16px;
+    white-space: nowrap; /* منع كسر السطر */
+    margin-left: 10px; /* مسافة بين التسمية والحقل */
+}
+
+/* تنسيق الحقول */
+input, select {
+    flex: 1; /* اجعل الحقل يتمدد لملء المساحة المتبقية */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+
+/* تنسيق زر الإرسال */
+button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    background-color: #002d72;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0044a7;
+}
+
+/* تصحيح أخطاء الهيدر */
+#pageHeader {
+    width: 100vw; /* عرض كامل الصفحة */
+    text-align: center;
+    padding: 10px 0; /* تحسين الهوامش */
+    position: fixed; /* تثبيت الهيدر */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* التأكد من ظهور الهيدر فوق كل العناصر */
+}
+
+/* تحسين عرض الصورة داخل الهيدر */
+#headerImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* جعل الصورة تغطي الهيدر بالكامل */
+}
+
+
+
+#label0 { 
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: right;
+    text-align: right;
+}

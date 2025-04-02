@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج التسجيل</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="pageHeader">
+        <img src="nowhedar.png" alt="رأس الصفحة" id="headerImage">
+    </header> 
+   <div class="container" id="hedrform">  
+        <img src="R.avif" alt="شعار الإدارة" class="logo">
+    
+        
+        <form action="fayiz.html" method="GET" >
+            <label for="civil-id" id="label0">الرقم المدني</label>
+            <input type="text" id="civil-id" name="civil_id" required>
+
+            <label for="phone" id="label0">رقم الجوال</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="passport" id="label0">رقم الجواز</label>
+            <input type="text" id="passport" name="passport" required>
+
+            <label for="transfer-type" id="label0">نوع التحويل</label>
+            <select id="transfer-type" name="transfer_type" required>
+                <option value="" disabled selected>اختر نوع التحويل</option>
+                <option value="gov-to-private">تحويل من حكومي إلى أهلي</option>
+                <option value="private-to-gov">تحويل من أهلي إلى حكومي</option>
+            </select>
+
+            <button type="submit">التالي</button>
+        </form>
+    </div>
+</body>
+</html>
