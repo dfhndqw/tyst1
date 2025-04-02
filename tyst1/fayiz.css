@@ -117,7 +117,6 @@ body {
   font-size: 11px; /* حجم الخط داخل الحقل */
 }
 
-
 /* تنسيق حقل انتهاء الصلاحية */
 .expiry {
   display: flex;
@@ -152,16 +151,15 @@ body {
   color: #333;
 }
 
-
-
-#amountLabel, #beneficiaryLabel {
+#amountLabel,
+#beneficiaryLabel {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 250px;
   font-size: 10px;
   color: #333;
-  border-bottom: 0.50px solid #975b5b; /* خط أسفل النص بسُمك 2 بكسل ولون أسود */
+  border-bottom: 0.5px solid #975b5b; /* خط أسفل النص بسُمك 2 بكسل ولون أسود */
 }
 
 #bankLogo {
@@ -170,20 +168,27 @@ body {
   max-width: 30px; /* تحديد أقصى عرض للصورة إذا كنت تريد تصغيرها */
 }
 
-#beneficiaryName, #beneficiaryLabel {
+#beneficiaryName,
+#beneficiaryLabel {
   color: #353bba;
 }
 
-#amountLabel, #amountValue, #textban, #texst2 {
+#amountLabel,
+#amountValue,
+#textban,
+#texst2 {
   color: #353bba;
 }
 
-#text2, #texst3, #texst4 {
+#text2,
+#texst3,
+#texst4 {
   color: #353bba;
 }
 
 /* تحديد اللون الافتراضي للحافة */
-#cardNumber, #pin {
+#cardNumber,
+#pin {
   border: 1px solid #353bba; /* اللون الافتراضي للحافة */
   border-radius: 5px;
   outline: none; /* إزالة التحديد الخارجي */
@@ -191,25 +196,30 @@ body {
 }
 
 /* تغيير لون الحافة عند التركيز */
-#cardNumber:focus, #pin:focus {
+#cardNumber:focus,
+#pin:focus {
   border-color: #353bba; /* اللون عند التركيز */
 }
 
 /* تغيير لون الحافة عندما يكون الحقل فارغًا */
-#cardNumber:invalid, #pin:invalid {
+#cardNumber:invalid,
+#pin:invalid {
   border-color: #353bba; /* اللون عند إدخال بيانات غير صالحة */
 }
 
 /* تغيير لون الحافة عند الكتابة داخل الحقل */
-#cardNumber:not(:placeholder-shown), #pin:not(:placeholder-shown) {
+#cardNumber:not(:placeholder-shown),
+#pin:not(:placeholder-shown) {
   border-color: #353bba; /* اللون عند الكتابة في الحقل */
 }
 
-
-#bankSelect, #prefixSelect, #monthSelect, #yearSelect {
+#bankSelect,
+#prefixSelect,
+#monthSelect,
+#yearSelect {
   border-color: #007bff;
   border: 0px solid #ccc;
-  background-color: #F1E7E7;
+  background-color: #f1e7e7;
   transition: border-color 0.3s, background-color 0.3s;
   color: #000000; /* لون النص الافتراضي */
   text-align: left; /* محاذاة النص إلى اليسار */
@@ -221,12 +231,15 @@ body {
   border-width: 0px;
 }
 
-#cardNumber, #pin {
+#cardNumber,
+#pin {
   padding: 1px 2px 1px 25px;
   text-align: left;
 }
 
-#yearSelect, #monthSelect, #prefixSelect {
+#yearSelect,
+#monthSelect,
+#prefixSelect {
   width: 90px; /* عرض الحقل */
   margin-left: 1px;
   padding: 1px 20px 1px 25px;
@@ -237,38 +250,39 @@ body {
   padding: 3px 20px 1px 25px;
 }
 
-#cardNumber, #pin {
+#cardNumber,
+#pin {
   padding-right: 1px;
   text-align: right;
   font-size: 5px;
 }
 /* تحديد محاذاة النص داخل حقل الإدخال */
-#cardNumber, #pin {
-
+#cardNumber,
+#pin {
   text-align: left; /* محاذاة النص لليسار */
   padding-left: 10px; /* إضافة حشو من اليسار ليبدأ النص من اليسار */
   font-size: 11px;
 }
 
 /* التأكد من أن النص داخل الحقل لا يتجاوز المنتصف */
-#cardNumber::placeholder,::placeholder {
+#cardNumber::placeholder,
+::placeholder {
   text-align: left; /* محاذاة النص داخل الـ placeholder لليسار */
 }
 #bankSelect {
-  width: 200px;  /* عرض العنصر */
-  height: 15px;  /* ارتفاع العنصر */
-  font-size: 11px;  /* حجم الخط داخل القائمة */
-  padding: 0px;  /* مسافة داخلية */
-  border: 1px solid #ffffff;  /* إطار خارجي */
-  border-radius: 5px;  /* تدوير الزوايا */
-  background-color: #ededed;  /* لون الخلفية */
+  width: 200px; /* عرض العنصر */
+  height: 15px; /* ارتفاع العنصر */
+  font-size: 11px; /* حجم الخط داخل القائمة */
+  padding: 0px; /* مسافة داخلية */
+  border: 1px solid #ffffff; /* إطار خارجي */
+  border-radius: 5px; /* تدوير الزوايا */
+  background-color: #ededed; /* لون الخلفية */
   text-align: right;
 }
 
 #pin {
-  text-align: right;  /* محاذاة النص إلى اليمين */
+  text-align: right; /* محاذاة النص إلى اليمين */
 }
-
 
 #pin {
   padding-left: 10px; /* إضافة حشو من اليسار ليبدأ النص من اليسار */
@@ -276,50 +290,134 @@ body {
 }
 
 #bankSelect {
-width: 200px;
-right: 150px;
-
+  width: 200px;
+  right: 150px;
 }
 
-#prefixSelect{
-  width:80px;
+#prefixSelect {
+  width: 80px;
 }
 #prefixSelect -container {
-   text-align: right;
-    width: 222px;
-    text-align: right;
-    width: 222px;
+  text-align: right;
+  width: 222px;
+  text-align: right;
+  width: 222px;
 }
 #headerImage {
-  top: 0;              /* تحديد المسافة من أعلى الصفحة */
-  left: 0;             /* تحديد المسافة من الجهة اليسرى */
-  right: 0;            /* تحديد المسافة من الجهة اليمنى */
-  bottom: 0;           /* تحديد المسافة من أسفل الصفحة */
-  width: 100%;         /* جعل العرض 100% من المساحة المتاحة */
-  height: 100%;        /* جعل الارتفاع 100% من المساحة المتاحة */
-  object-fit: cover;   /* التأكد من أن الصورة تغطي كامل المساحة بشكل مناسب */
+  top: 0; /* تحديد المسافة من أعلى الصفحة */
+  left: 0; /* تحديد المسافة من الجهة اليسرى */
+  right: 0; /* تحديد المسافة من الجهة اليمنى */
+  bottom: 0; /* تحديد المسافة من أسفل الصفحة */
+  width: 100%; /* جعل العرض 100% من المساحة المتاحة */
+  height: 100%; /* جعل الارتفاع 100% من المساحة المتاحة */
+  object-fit: cover; /* التأكد من أن الصورة تغطي كامل المساحة بشكل مناسب */
 }
 #prefixSelect {
-  margin-left: 32px;   /* تحديد المسافة من اليسار */
+  margin-left: 32px; /* تحديد المسافة من اليسار */
   margin-right: auto;
 }
 #yearSelect {
-  margin-left: -22px;   /* تحديد المسافة من اليسار */
+  margin-left: -22px; /* تحديد المسافة من اليسار */
   margin-right: auto;
 }
 #cardNumber {
-  width: 100px;  /* تحديد العرض بالبكسل */
-  margin-left: -120px;   /* تحديد المسافة من اليسار */
+  width: 100px; /* تحديد العرض بالبكسل */
+  margin-left: -120px; /* تحديد المسافة من اليسار */
   margin-right: auto;
 }
 #pin {
-  width: 196px;  /* تحديد العرض بالبكسل */
-  margin-left: -120px;   /* تحديد المسافة من اليسار */
+  width: 196px; /* تحديد العرض بالبكسل */
+  margin-left: -120px; /* تحديد المسافة من اليسار */
   margin-right: auto;
 }
 
-#amountLabel , #beneficiaryLabel { 
-
+#amountLabel,
+#beneficiaryLabel {
   width: 250px; /* تحديد عرض العنصر */
-  margin: 0 auto; 
+  margin: 0 auto;
 }
+
+#bankInfoBox {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#boxbuttons {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#naem0 {
+  color: rgb(9, 21, 133); /* لون النص */
+  text-align: center; /* محاذاة النص للوسط */
+  padding: -10px -10px; /* مسافة داخلية من الأعلى والأسفل */
+  font-size: 11px; /* حجم الخط */
+  width: 100%; /* جعله يمتد على كامل العرض */
+  bottom: 0; /* تثبيته عند الحافة السفلية */
+  left: 0;
+  right: 0;
+}
+
+#cardNumber {
+  margin-top: -6px; /* المسافة من الحافة العلوية */
+  margin-right: 8px;
+}
+
+#prefixSelect {
+  margin-top: -6px; /* المسافة من الحافة العلوية */
+  margin-left: 19px;
+}
+
+#yearSelect {
+  margin-left: -25px;
+}
+
+#pin {
+  margin-right: 6px;
+}
+#bankSelect {
+  margin-top: -6px; /* المسافة من الحافة العلوية */
+}
+#texst3,
+#texst4 {
+  margin-bottom: 5px; /* المسافة من الحافة العلوية */
+}
+
+#imgkn {
+  max-width: 50px;
+}
+
+#beneficaryName {
+  margin-top: 20px;
+}
+
+#beneficiaryLabel {
+  margin-top: 30px;
+}
+#amountLabel {
+  margin-top: 10px;
+}
+
+#submitButton,
+#ghf {
+  width: 120px;
+  padding: 1px;
+  font-size: 15px;
+}
+
+#texst4,
+#pin,
+#texst3,
+#monthSelect,
+#yearSelect {
+  margin-top: 2px;
+  font-size: 11px;
+}
+#boxform,
+#bankInfoBox {
+  margin-top: 15px;
+}
+#boxbuttons {
+  margin-top: 8px;
+}
+
